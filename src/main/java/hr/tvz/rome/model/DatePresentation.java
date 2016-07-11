@@ -1,12 +1,14 @@
 package hr.tvz.rome.model;
 
+import java.util.Comparator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class DatePresentation {
+public class DatePresentation implements Comparable<DatePresentation>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -92,5 +94,10 @@ public class DatePresentation {
 		sb.append(".");
 		sb.append(year);
 		return sb.toString();
+	}
+
+	@Override
+	public int compareTo(DatePresentation other) {
+		return this.getDayOfStart() - other.getDayOfStart();
 	}
 }

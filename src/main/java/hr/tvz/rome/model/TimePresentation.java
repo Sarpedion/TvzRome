@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TimePresentation {
+public class TimePresentation implements Comparable<TimePresentation>{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,6 +38,14 @@ public class TimePresentation {
 	@Override
 	public String toString() {
 		return hour + ":" + minute;
+	}
+
+	public int compareTo(TimePresentation time) {
+		if (time.getHour() != this.getHour()){
+			return this.getHour() -  time.getHour();
+		}else{
+			return this.getMinute() - time.getMinute();
+		}
 	}
 
 }

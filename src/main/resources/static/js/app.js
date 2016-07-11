@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute', 'ngMaterial', 'md.data.table', 'ngMdIcons', 'ngMessages', 'auth', 'home', 'navigation', 'admin', 'profile', 'ngCookies', 'employees', 'newEvidence', 'myEvidences', 'ngMessages', 'ngSanitize', 'ngCsv']).
+angular.module('app', ['ngRoute', 'ngMaterial', 'md.data.table', 'ngMdIcons', 'ngMessages', 'auth', 'home', 'navigation', 'admin', 'profile', 'ngCookies', 'employees', 'newEvidence', 'myEvidences','dashboard', 'ngMessages', 'ngSanitize', 'ngCsv','chart.js']).
     config(function ($routeProvider) {
 
         $routeProvider.when('/', {
@@ -37,6 +37,10 @@ angular.module('app', ['ngRoute', 'ngMaterial', 'md.data.table', 'ngMdIcons', 'n
         }).when('/myEvidence', {
             templateUrl: '/partials/myevidence.html',
             controller: 'myEvidences',
+            controllerAs: 'controller'
+        }).when('/dashboard', {
+            templateUrl: '/partials/dashboard.html',
+            controller: 'dashboard',
             controllerAs: 'controller'
         }).otherwise('/');
 

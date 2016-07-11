@@ -50,6 +50,10 @@ angular.module('navigation', ['ngRoute', 'auth'])
             self.navMyEvidence = function navMyEvidence() {
                 $location.path('/myEvidence');
             };
+            
+            self.navDashboard = function navDashboard() {
+                $location.path('/dashboard');
+            };
 
             function buildDelayedToggler(navID) {
                 return debounce(function () {

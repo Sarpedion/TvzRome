@@ -1,5 +1,7 @@
 package hr.tvz.rome.model;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -47,13 +49,15 @@ public class EvidenceNew {
 	public EvidenceNew() {
 	}
 
-	public EvidenceNew(Employee employee, Project project, Location location, Date timestamp, EvidenceType type, String uniqueId) {
+	public EvidenceNew(Employee employee, Project project, Location location, LocalDateTime timestamp, EvidenceType type, String uniqueId, TimePresentation time, DatePresentation date) {
 		this.employee = employee;
 		this.project = project;
 		this.location = location;
-		this.timestamp = timestamp;
+		this.timestamp = Date.from(timestamp.atZone(ZoneId.systemDefault()).toInstant());
 		this.type = type;
 		this.uniqueId = uniqueId;
+		this.date = date;
+		this.time = time;
 	}
 
 	public long getId() {

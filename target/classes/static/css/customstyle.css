@@ -29,3 +29,14 @@ md-checkbox.md-checked.cyan .md-icon {
     width: auto; }
 .selectdemoSelectHeader md-content._md {
     max-height: 240px; }
+.chart_container {
+    float: left;
+}
+#byHour {
+    width: 850px;
+    height: 600px;
+}
+#total {
+    width: 400px;
+    height: 600px;
+}
